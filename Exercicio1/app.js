@@ -52,11 +52,34 @@ app.get("/multiplicacao/:numUm/:numDois", (req, res)=>{
         const multiplicacao = parseFloat(numUm) * parseFloat(numDois);
 
         res.status(200).send(`<h1>A multiplicação dos valores é ${multiplicacao}</h1>`);
-
+    
+    
     } catch (error) {
         console.error("Erro capturado:", error);
         res.status(500).send(`Erro interno do servidor`);
     }
+
+});
+
+app.get("/divisao/:numUm/:numDois", (req, res)=>{
+    try {
+        const {numUm} = req.params;
+        const {numDois} = req.params;
+
+        if (numUm == undefined || numUm== "" || isNaN(numUm) || numDois == undefined || numDois == "" || isNaN(numDois) || numUm == 0 || numDois == 0) {
+            return res.status(400).send(`Campos obrigatórios não preenchidos ou incorretos!`);
+
+        } 
+        const divisao = parseFloat(numUm) / parseFloat(numDois);
+
+        res.status(200).send(`<h1>A divisão dos valores é ${divisao}</h1>`);
+    
+    
+    } catch (error) {
+        console.error("Erro capturado:", error);
+        res.status(500).send(`Erro interno do servidor`);
+    }
+
 });
 
 
