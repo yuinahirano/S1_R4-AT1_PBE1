@@ -1,4 +1,4 @@
-const express = require(`express`);
+const express = require(`express`);//importa módulo do Express pra usar suas funcionalidades
 const app = express();
 const PORT = 8081;
 

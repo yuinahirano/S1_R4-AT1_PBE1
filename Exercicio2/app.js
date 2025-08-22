@@ -1,4 +1,4 @@
-const express = require(`express`);
+const express = require(`express`);//importa módulo do Express pra usar suas funcionalidades
 const app = express();
 const PORT = 8081;
 
@@ -14,6 +14,7 @@ app.get("/calculadora", (req, res) => {
         }
         let resultado = 0;
 
+        //usado o switch case para controlar condições e executar codigos especificos para cada situação
         switch (operacao) {
             case "soma":
                 resultado = parseFloat(numUm) + parseFloat(numDois);
